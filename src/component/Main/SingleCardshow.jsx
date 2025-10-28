@@ -1,10 +1,11 @@
 import React from 'react';
 import { motion } from "framer-motion";
 import { FaRegClock, FaEye } from "react-icons/fa";
-import Modal from '../Modal';
+import Modal1 from '../Modal1';
 
 const SingleCardshow = ({ singleData }) => {
     const {
+        id,
         title,
         author,
         date,
@@ -13,6 +14,8 @@ const SingleCardshow = ({ singleData }) => {
         views,
         read_time,
     } = singleData;
+
+    const modalId = `my_modal_${id}`;
 
     return (
         <motion.div
@@ -56,13 +59,13 @@ const SingleCardshow = ({ singleData }) => {
 
                     <button
                         className="bg-[#D6344F] text-white px-4 py-2 rounded-lg font-medium hover:bg-[#c0384f] transition-all duration-300"
-                        onClick={() => document.getElementById('my_modal_5').showModal()}
+                        onClick={() => document.getElementById(modalId).showModal()}
                     >
                         View Details
                     </button>
 
                     <div>
-                        <Modal key={singleData.id} singleData={singleData}></Modal>
+                        <Modal1 key={singleData.id} singleData={singleData} modalId={modalId}></Modal1>
                     </div>
 
 

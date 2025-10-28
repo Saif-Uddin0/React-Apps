@@ -1,7 +1,7 @@
 import React from "react";
 import { FaRegClock, FaEye } from "react-icons/fa";
 
-const Modal = ({ singleData }) => {
+const Modal1 = ({ singleData,modalId }) => {
   const {
     title,
     author,
@@ -13,8 +13,8 @@ const Modal = ({ singleData }) => {
   } = singleData;
 
   return (
-    <dialog id="my_modal_5" className="modal">
-      <div className="modal-box w-11/12 max-w-4xl p-4 md:p-6">
+    <dialog id={modalId} className="modal">
+      <div className="modal-box w-11/12 max-w-4xl p-4  md:p-6">
         <div className="flex flex-col md:flex-row items-center gap-5 justify-center">
           {/* Image Section */}
           <div className="w-full md:w-1/2">
@@ -57,4 +57,4 @@ const Modal = ({ singleData }) => {
   );
 };
 
-export default Modal;
+export default Modal1;
