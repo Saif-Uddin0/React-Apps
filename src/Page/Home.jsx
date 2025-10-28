@@ -1,6 +1,7 @@
 import React from 'react';
 import Header from '../component/Header/Header';
-import Main from '../component/Main/Main';
+import MainPart from '../component/Main/MainPart';
+ '../component/Main/MainPart';
 
 const Home = () => {
     return (
@@ -13,7 +14,7 @@ const Home = () => {
 
             {/* this is the main section */}
             <main>
-                <Main></Main>
+                <MainPart></MainPart>
             </main>
 
             {/* this is the footer section */}

@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import Category from './Category';
 import CategoryCard from './CategoryCard';
 
-const LeftAside = () => {
+const LeftAside = ({handleCategoryId ,showId}) => {
     const [categories , setCategories] = useState([]);
 
     useEffect(()=>{
@@ -17,14 +17,14 @@ const LeftAside = () => {
     
 
     return (
-        <div className='border border-gray-200 shadow-xs rounded-md pb-5'>
+        <div className='border border-gray-200 shadow-xs rounded-md pb-5 p-2'>
             <div className='flex flex-col md:flex-row flex-wrap gap-4 justify-items-start px-3 py-6'>
                 {
-                    categories.map(cate => <Category key={cate.id} cate={cate}></Category>)
+                    categories.map(cate => <Category handleCategoryId={handleCategoryId} key={cate.id} cate={cate}></Category>)
                 }
             </div>
             <div className='p-2'>
-                <CategoryCard></CategoryCard>
+                <CategoryCard showId={showId}></CategoryCard>
             </div>
         </div>
     );

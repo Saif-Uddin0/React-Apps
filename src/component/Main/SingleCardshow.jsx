@@ -1,6 +1,7 @@
 import React from 'react';
 import { motion } from "framer-motion";
 import { FaRegClock, FaEye } from "react-icons/fa";
+import Modal from '../Modal';
 
 const SingleCardshow = ({ singleData }) => {
     const {
@@ -52,9 +53,22 @@ const SingleCardshow = ({ singleData }) => {
                         </span>
                     </div>
 
-                    <button className="bg-[#D6344F] text-white px-4 py-2 rounded-lg font-medium hover:bg-pink-600 transition-all duration-300 ">
-                        Read Blog
+
+                    <button
+                        className="bg-[#D6344F] text-white px-4 py-2 rounded-lg font-medium hover:bg-[#c0384f] transition-all duration-300"
+                        onClick={() => document.getElementById('my_modal_5').showModal()}
+                    >
+                        View Details
                     </button>
+
+                    <div>
+                        <Modal key={singleData.id} singleData={singleData}></Modal>
+                    </div>
+
+
+
+
+
                 </div>
             </div>
         </motion.div>

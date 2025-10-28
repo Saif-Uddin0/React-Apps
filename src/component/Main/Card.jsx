@@ -1,9 +1,10 @@
 import React, { useEffect, useState } from 'react';
 import SingleCardshow from './SingleCardshow';
 
-const Card = () => {
+const Card = ({showId}) => {
     const [data ,setData ] = useState([])
-
+    // const [displayData , setDisplaydata] = useState([])
+    
 
     useEffect(()=>{
         fetch('/Card.json')
@@ -13,13 +14,22 @@ const Card = () => {
             setData(singleCard)
     })
     },[setData]);
+    const filterData = showId? data.filter(singleData => singleData.category_id == showId ) : data ;
+    console.log(filterData);
     return (
         <div className='grid grid-cols-1 gap-7'>
-                {
-                    data.map(singleData => <SingleCardshow
+                {showId && showId.length>=0?
+                    (data.map(singleData => <SingleCardshow
                          key={singleData.id}
                          singleData={singleData}
-                         ></SingleCardshow> )
+                         ></SingleCardshow> ) ) 
+
+                         :
+
+                          (filterData.map(singleData => <SingleCardshow
+                         key={singleData.id}
+                         singleData={singleData}
+                         ></SingleCardshow> ) )
                 }
         </div>
     );
