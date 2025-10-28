@@ -1,6 +1,7 @@
 import React from 'react';
 import Header from '../component/Header/Header';
 import MainPart from '../component/Main/MainPart';
+import Footer from '../component/Footer';
  '../component/Main/MainPart';
 
 const Home = () => {
@@ -19,7 +20,7 @@ const Home = () => {
 
             {/* this is the footer section */}
             <footer>
-
+                <Footer></Footer>
             </footer>
         </div>
     );

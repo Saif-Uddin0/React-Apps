@@ -1,5 +1,6 @@
-import React, { useEffect, useState } from 'react';
+import React, { Suspense, useEffect, useState } from 'react';
 import SingleCardshow from './SingleCardshow';
+import Loader from '../Loader';
 
 const Card = ({showId}) => {
     const [data ,setData ] = useState([])
@@ -18,6 +19,7 @@ const Card = ({showId}) => {
     console.log(filterData);
     return (
         <div className='grid grid-cols-1 gap-7'>
+                <Suspense fallback={<Loader></Loader>}>
                 {showId && showId.length>=0?
                     (data.map(singleData => <SingleCardshow
                          key={singleData.id}
@@ -30,7 +32,7 @@ const Card = ({showId}) => {
                          key={singleData.id}
                          singleData={singleData}
                          ></SingleCardshow> ) )
-                }
+                }</Suspense>
         </div>
     );
 };
