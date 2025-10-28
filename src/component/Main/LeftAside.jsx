@@ -17,16 +17,14 @@ const LeftAside = () => {
     
 
     return (
-        <div className='border border-gray-200 shadow-xs rounded-md '>
-            <div className='grid grid-cols-1 lg:grid-cols-2 gap-5 px-3 py-6'>
+        <div className='border border-gray-200 shadow-xs rounded-md pb-5'>
+            <div className='flex flex-col md:flex-row flex-wrap gap-4 justify-items-start px-3 py-6'>
                 {
                     categories.map(cate => <Category key={cate.id} cate={cate}></Category>)
                 }
             </div>
-            <div>
-                {
-                    categories.slice(0,7).map(cate => <CategoryCard key={cate.id} cate={cate}></CategoryCard>)
-                }
+            <div className='p-2'>
+                <CategoryCard></CategoryCard>
             </div>
         </div>
     );
