@@ -52,7 +52,7 @@ const SingleCardshow = ({ singleData }) => {
                         </span>
                     </div>
 
-                    <button className="bg-[#D6344F] text-white px-4 py-2 rounded-lg font-medium hover:bg-pink-600 transition-all duration-300">
+                    <button className="bg-[#D6344F] text-white px-4 py-2 rounded-lg font-medium hover:bg-pink-600 transition-all duration-300 ">
                         Read Blog
                     </button>
                 </div>

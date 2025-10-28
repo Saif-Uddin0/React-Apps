@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import SingleCardshow from '../SingleCardshow';
+import SingleCardshow from './SingleCardshow';
 
 const Card = () => {
     const [data ,setData ] = useState([])
@@ -9,7 +9,7 @@ const Card = () => {
         fetch('/Card.json')
         .then(res=> res.json())
         .then(singleCard => {
-            console.log(singleCard);
+            // console.log(singleCard);
             setData(singleCard)
     })
     },[setData]);
