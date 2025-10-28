@@ -1,5 +1,6 @@
 import React from 'react';
 import Header from '../component/Header';
+import Main from '../component/Main/Main';
 
 const Home = () => {
     return (
@@ -12,7 +13,7 @@ const Home = () => {
 
             {/* this is the main section */}
             <main>
-
+                <Main></Main>
             </main>
 
             {/* this is the footer section */}
